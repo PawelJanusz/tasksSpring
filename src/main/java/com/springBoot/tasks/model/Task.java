@@ -18,7 +18,7 @@ public class Task{
     private boolean done;
     private LocalDateTime deadline;
     @Embedded  //klasa osadzona
-    private Audit audit = new Audit();
+    private final Audit audit = new Audit();
 
     public Task() {
     }
@@ -59,7 +59,6 @@ public class Task{
         description = source.description;
         done = source.done;
         deadline = source.deadline;
-
     }
 
 }

@@ -1,10 +1,10 @@
 package com.springBoot.tasks.controller;
 
 import com.springBoot.tasks.model.Task;
-import com.springBoot.tasks.model.SqlTaskRepository;
-import com.springBoot.tasks.model.TaskRepository;
+import com.springBoot.tasks.repository.TaskRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,7 +21,7 @@ public class TaskController {
     private static final Logger logger = LoggerFactory.getLogger(TaskController.class);
     private final TaskRepository repository;
 
-
+    @Autowired
     public TaskController(TaskRepository repository) {
         this.repository = repository;
     }
@@ -65,7 +65,7 @@ public class TaskController {
         return ResponseEntity.noContent().build();
     }
 
-    @Transactional
+    @Transactional()
     @PatchMapping("/tasks/{id}")
     public ResponseEntity<?> toggleTask(@PathVariable int id){
         if (!repository.existsById(id)){

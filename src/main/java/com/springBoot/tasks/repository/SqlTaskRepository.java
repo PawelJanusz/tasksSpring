@@ -1,5 +1,6 @@
-package com.springBoot.tasks.model;
+package com.springBoot.tasks.repository;
 
+import com.springBoot.tasks.model.Task;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

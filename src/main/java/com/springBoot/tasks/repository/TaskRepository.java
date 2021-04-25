@@ -1,5 +1,6 @@
-package com.springBoot.tasks.model;
+package com.springBoot.tasks.repository;
 
+import com.springBoot.tasks.model.Task;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.query.Param;
